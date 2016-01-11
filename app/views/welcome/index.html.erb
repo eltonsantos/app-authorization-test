@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Welcome</h1>
+<ul>
+	<% if user_signed_in? %>
+		<li>Logado como: <%= current_user.email %></li>
+		<li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+	<% else %>
+		<li><%= link_to "Sign in", new_user_session_path %></li>
+		<li><%= link_to "Register new user", new_user_registration_path %></li>
+	<% end %>	
+</ul>
+<br />
+<ul>
+	<li><%= link_to "Customers", customers_path %></li>
+	<li><%= link_to "Address", addresses_path %></li>
+	<li><%= link_to "Products", products_path %></li>
+	<li><%= link_to "User list", control_users_index_path %></li>
+</ul>
